@@ -21,10 +21,25 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-function addBookToLibrary(title, author, pages, read) {
+function addBookToLibrary() {
     // take the user's input and store the new book objects into an array
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let read = document.getElementById('read').value;
+    //document.getElementById('book_form').submit()
+    console.log(title, author, pages, read)
     myLibrary.push(new Book(title, author, pages, read))
+    document.getElementById('book_form').reset()
+    return false
 }
+
+const submitBtn = document.getElementById('submit')
+submitBtn.addEventListener('click', () => addBookToLibrary())
+
+
+
+//optional: create a validation function
 
 function displayBooks() {
     // loops through the array and displays each book on the page
