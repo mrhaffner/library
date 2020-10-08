@@ -75,10 +75,19 @@ function clickToggleEvent (button) {
     button.addEventListener('click', () => {
         if (button.value === 'Finished Reading') {
             button.value = 'Have Not Finished';
+            updateReadStatus(button)
         } else {
             button.value = 'Finished Reading';
+            updateReadStatus(button)
         };
     })
+
+}
+
+function updateReadStatus(button) {
+    if (button.closest('.card') !== null) {
+        myLibrary[button.parentElement.id].read = button.value
+    }
 }
 
 //if it's parent's elements class === card
