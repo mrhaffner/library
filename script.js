@@ -98,6 +98,11 @@ function updateReadStatus(button) {
 
 function deleteBook(button) {
     button.parentElement.remove()
+    //delete myLibrary[button.parentElement.id]
+    myLibrary.splice(button.parentElement.id, 1)
+    displayBooks()
+    addReadToggle()
+    addDelete()
 }
 
 function addDelete() {
@@ -107,7 +112,8 @@ function addDelete() {
     });
 }
 
-
+//when you create a book, give it an id number, the card also gets that id number
+    //on delete loop through the array looking for an object with that id and remove the item at that point in the array
 
 //add a "NEW BOOK" button that brings up a form allowing users to input the details for the new book: author, title, number of pages, whether it's been read...
     //hidden from at the button that pops up
