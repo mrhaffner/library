@@ -3,13 +3,13 @@ let myLibrary = [{
         title: 'Dune',
         author: 'Frank Herbert',
         pages: '400',
-        read: 'Completed',
+        read: 'Finished Reading',
     }, 
     {
         title: 'Basic Economics',
         author: 'Thomas Sowell',
         pages: '500',
-        read: 'Completed',
+        read: 'Finished Reading',
     },
 ];
 
@@ -50,11 +50,11 @@ function displayBooks() {
     htmlElements = "";
     myLibrary.forEach((book) => {
         htmlElements +=         
-            `<div class="card">
+            `<div class="card" id="${myLibrary.indexOf(book)}">
             <p>${book.title}</p>
             <p>${book.author}</p>
             <p>${book.pages}</p>
-            <input type='button' class='read' value='Finished Reading'></input>
+            <input type='button' class='read' value='${book.read}'></input>
             <button>Delete</button>
             </div>`
         bookContainer.innerHTML = htmlElements;
@@ -64,24 +64,12 @@ function displayBooks() {
 function addReadToggle() {
     let toggle = document.querySelectorAll('.read')
     toggle.forEach((button) => {
-        button.addEventListener('click', () => {
-            if (button.value === 'Finished Reading') {
-                button.value = 'Have Not Finished';
-            } else {
-                button.value = 'Finished Reading';
-            };
-        })
+        clickToggleEvent(button)
     })
 }
 
 const readBtn = document.getElementById('read')
-readBtn.addEventListener('click', () => {
-    if (readBtn.value === 'Finished Reading') {
-        readBtn.value = 'Have Not Finished';
-    } else {
-        readBtn.value = 'Finished Reading';
-    };
-})
+clickToggleEvent(readBtn)
 
 function clickToggleEvent (button) {
     button.addEventListener('click', () => {
@@ -93,15 +81,26 @@ function clickToggleEvent (button) {
     })
 }
 
+//if it's parent's elements class === card
+    //get the id of the parent element
+        //change the read status of the object in array at place = id to button.value
+
+
+
+//function clickUpdateReadStatus (book) {
+//    if (book. === 'Finished Reading') {
+//        button.value = 'Have Not Finished';
+//    } else {
+//        button.value = 'Finished Reading';
+//    };
+//}
+
 //add a "NEW BOOK" button that brings up a form allowing users to input the details for the new book: author, title, number of pages, whether it's been read...
     //hidden from at the button that pops up
 
 //add a button on each book's diplay to remove the book from the library
     //will need to associate your DOM elements with the actual book objext in some way
         //easy solution is giving them a data-attribute that corresponds to the index of the library array
-
-//add a button on each book's display to change it's "read" status
-    //create the function that toggles a book's "read" status on your "book" prototype
 
 
 //Remove this once fully operational, just for testing
