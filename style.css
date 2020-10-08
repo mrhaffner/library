@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 .card {
     width: 20em;
     height: 20em;
@@ -5,3 +10,24 @@
 }
 
 /*make the book cards look like actual books - maybe use an image as the background*/
+
+#bottom_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+#form_container {
+    display: none;
+}
+
+#open_btn_container {
+    display: flex;
+    justify-content: center;
+}
+
+#form_open_btn {
+    width: 100%;
+}

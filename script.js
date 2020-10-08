@@ -1,4 +1,3 @@
-// write a test book object in array
 let myLibrary = [{
         title: 'Dune',
         author: 'Frank Herbert',
@@ -14,7 +13,6 @@ let myLibrary = [{
 ];
 
 function Book(title, author, pages, read) {
-    // the constructor...
     this.title = title
     this.author = author
     this.pages = pages
@@ -22,31 +20,24 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    // take the user's input and store the new book objects into an array
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
     let read = document.getElementById('read').value;
-    //document.getElementById('book_form').submit()
     myLibrary.push(new Book(title, author, pages, read))
     document.getElementById('book_form').reset()
     displayBooks()
     readBtn.value = 'Finished Reading';
     addReadToggle()
     addDelete()
-    //return false
 }
 
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', () => addBookToLibrary())
 
-
-//optional: create a validation function
-
 const bookContainer = document.getElementById('book-container')
 
 function displayBooks() {
-    // loops through the array and displays each book on the page
     htmlElements = "";
     myLibrary.forEach((book) => {
         htmlElements +=         
@@ -90,15 +81,8 @@ function updateReadStatus(button) {
     }
 }
 
-//add a button on each book's diplay to remove the book from the library
-    //will need to associate your DOM elements with the actual book objext in some way
-        //easy solution is giving them a data-attribute that corresponds to the index of the library array
-
-
-
 function deleteBook(button) {
     button.parentElement.remove()
-    //delete myLibrary[button.parentElement.id]
     myLibrary.splice(button.parentElement.id, 1)
     displayBooks()
     addReadToggle()
@@ -112,14 +96,28 @@ function addDelete() {
     });
 }
 
-//when you create a book, give it an id number, the card also gets that id number
-    //on delete loop through the array looking for an object with that id and remove the item at that point in the array
+function openForm() {
+    document.getElementById("form_container").style.display = "block";
+  }
+  
+function closeForm() {
+    document.getElementById("form_container").style.display = "none";
+  }
 
-//add a "NEW BOOK" button that brings up a form allowing users to input the details for the new book: author, title, number of pages, whether it's been read...
-    //hidden from at the button that pops up
-
+const formBtn = document.getElementById('form_open_btn');
+formBtn.addEventListener('click', () => {
+    if (formBtn.value === 'New Book') {
+        openForm()
+        formBtn.value = 'Close';
+    } else {
+        closeForm()
+        formBtn.value = 'New Book';
+    }
+})
 
 //Remove this once fully operational, just for testing - also delete your test book objects
 displayBooks()
 addReadToggle()
 addDelete()
+
+//add a way to verify input
