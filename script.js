@@ -1,10 +1,16 @@
 // write a test book object in array
 let myLibrary = [{
-    title: 'Dune',
-    author: 'Frank Herbert',
-    pages: '400',
-    read: 'Completed',
+        title: 'Dune',
+        author: 'Frank Herbert',
+        pages: '400',
+        read: 'Completed',
     }, 
+    {
+        title: 'Basic Economics',
+        author: 'Thomas Sowell',
+        pages: '500',
+        read: 'Completed',
+    },
 ];
 
 function Book(title, author, pages, read) {
@@ -34,7 +40,7 @@ function displayBooks() {
             <button>Delete</button>
             </div>`
         bookContainer.innerHTML = htmlElements;
-    }) 
+    }); 
 }
 
 const bookContainer = document.getElementById('book-container')
