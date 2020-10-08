@@ -33,7 +33,18 @@ function addBookToLibrary() {
 }
 
 const submitBtn = document.getElementById('submit')
-submitBtn.addEventListener('click', () => addBookToLibrary())
+submitBtn.addEventListener('click', () => {
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    if ((title === "") || (author === "") || (pages === "")) {
+        alert("Please fill in all input fields!")
+    } else if (pages < 1) {
+        alert("Please enter a number above 0")
+    } else {
+        addBookToLibrary()
+    }
+})
 
 const bookContainer = document.getElementById('book-container')
 
