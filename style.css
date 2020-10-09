@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    width: 100%;
+    width: 99%;
 }
 
 .card {
@@ -30,4 +30,13 @@ html, body {
 
 #form_open_btn {
     width: 100%;
+}
+
+/* make text invisible maybe so that when it does not reshape anything for error form validation*/
+#empty_alert {
+    opacity: 0;
+}
+
+#number_alert {
+    opacity: 0;
 }

@@ -32,17 +32,24 @@ function addBookToLibrary() {
     addDelete()
 }
 
+let emptyAlert = document.getElementById('empty_alert');
+let numberAlert = document.getElementById('number_alert');
+
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', () => {
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
     if ((title === "") || (author === "") || (pages === "")) {
-        alert("Please fill in all input fields!")
+        numberAlert.style.opacity = '0%';
+        emptyAlert.style.opacity = '100%';
     } else if (pages < 1) {
-        alert("Please enter a number above 0")
+        emptyAlert.style.opacity = '0%';
+        numberAlert.style.opacity = '100%';
     } else {
         addBookToLibrary()
+        numberAlert.style.opacity = '0%';
+        emptyAlert.style.opacity = '0%';
     }
 })
 
