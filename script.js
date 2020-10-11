@@ -53,18 +53,20 @@ submitBtn.addEventListener('click', () => {
     }
 })
 
-const bookContainer = document.getElementById('book-container')
+const bookContainer = document.getElementById('book_container')
 
 function displayBooks() {
     htmlElements = "";
     myLibrary.forEach((book) => {
         htmlElements +=         
             `<div class="card" id="${myLibrary.indexOf(book)}">
-            <p>${book.title}</p>
-            <p>${book.author}</p>
-            <p>${book.pages}</p>
-            <input type='button' class='read' value='${book.read}'></input>
-            <button class='delete'>Delete</button>
+                <div class="card_text">
+                    <p>${book.title}</p>
+                    <p>${book.author}</p>
+                    <p>${book.pages}</p>
+                    <input type='button' class='read' value='${book.read}'></input><br>
+                    <button class='delete'>Delete</button>
+                </div>
             </div>`
         bookContainer.innerHTML = htmlElements;
     }); 

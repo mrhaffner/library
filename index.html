@@ -11,23 +11,25 @@
         <h1>The Archives</h1>
     </header>
     
-    <div id="book-container">
+    <div id="book_container">
     </div>
     <div id="bottom_container">
         <div id="form_container">
-            <form name="book_form" id="book_form">
-                <p id="empty_alert">Please fill in all input fields!</p>
-                <p id="number_alert">Please enter a number above 0!</p>
-                <label for="title">Title</label><br>
-                <input type="text" id="title" name="title" autocomplete="off"><br>
-                <label for="author">Author</label><br>
-                <input type="text" id="author" name="author" autocomplete="off"><br>
-                <label for="pages">Number of Pages</label><br>
-                <input type="number" id="pages" name="pages" autocomplete="off"><br>
-                <label for="read">Have you Completed the Book?</label><br>
-                <input type="button" id="read" name="read" value="Finished Reading"></input><br>
-                <input type="button" id="submit" value="Add Book">
-            </form>
+            <div id="form_align">
+                <form name="book_form" id="book_form">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" autocomplete="off"><br>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" autocomplete="off"><br>
+                    <label for="pages">Number of Pages</label>
+                    <input type="number" id="pages" name="pages" autocomplete="off">
+                    <label id="number_alert">Please enter a number above 0!</label><br>
+                    <label for="read">Have you Completed the Book?</label>
+                    <input type="button" id="read" name="read" value="Finished Reading"></input><br>
+                    <input type="button" id="submit" value="Add Book">
+                    <plabel id="empty_alert">Please fill in all input fields!</plabel>
+                </form>
+            </div>
         </div>
         <div id="open_btn_container">
             <input type="button" id="form_open_btn" name="form_open_btn" value="New Book"></input>
