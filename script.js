@@ -1,15 +1,4 @@
-let myLibrary = [{
-        title: 'Dune',
-        author: 'Frank Herbert',
-        pages: '400',
-        read: 'Finished Reading',
-    }, 
-    {
-        title: 'Basic Economics',
-        author: 'Thomas Sowell',
-        pages: '500',
-        read: 'Finished Reading',
-    },
+let myLibrary = [
 ];
 
 function Book(title, author, pages, read) {
@@ -18,6 +7,15 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
 }
+
+// class Book {
+//     constructor(title, author, pages, read) {
+//         this.title = title;
+//         this.author = author;
+//         this.pages = pages;
+//         this.read = read;
+//     }
+// }
 
 function addBookToLibrary() {
     let title = document.getElementById('title').value;
@@ -102,8 +100,8 @@ function updateReadStatus(button) {
 }
 
 function deleteBook(button) {
-    button.parentElement.remove()
-    myLibrary.splice(button.parentElement.id, 1)
+    button.parentElement.parentElement.remove()
+    myLibrary.splice(button.parentElement.parentElement.id, 1)
     displayBooks()
     addReadToggle()
     addDelete()
@@ -136,8 +134,8 @@ formBtn.addEventListener('click', () => {
 })
 
 //Remove this once fully operational, just for testing - also delete your test book objects
-displayBooks()
-addReadToggle()
-addDelete()
+// displayBooks()
+// addReadToggle()
+// addDelete()
 
 //add a way to verify input
