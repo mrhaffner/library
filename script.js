@@ -1,4 +1,21 @@
 let myLibrary = [
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
+
+ 
+
 ];
 
 function Book(title, author, pages, read) {
@@ -8,14 +25,6 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-// class Book {
-//     constructor(title, author, pages, read) {
-//         this.title = title;
-//         this.author = author;
-//         this.pages = pages;
-//         this.read = read;
-//     }
-// }
 
 function addBookToLibrary() {
     let title = document.getElementById('title').value;
@@ -58,12 +67,14 @@ function displayBooks() {
     myLibrary.forEach((book) => {
         htmlElements +=         
             `<div class="card" id="${myLibrary.indexOf(book)}">
-                <div class="card_text">
-                    <p>${book.title}</p>
-                    <p>${book.author}</p>
-                    <p>${book.pages}</p>
-                    <input type='button' class='read' value='${book.read}'></input><br>
-                    <button class='delete'>Delete</button>
+                <div class="card_card">
+                    <button class='delete'>X</button>
+                    <div class='card_text'>
+                        <p>${book.title}</p>
+                        <p>${book.author}</p>
+                        <p>${book.pages}</p>
+                    </div>
+                    <div><input type='button' class='read' value='${book.read}'></input></div>
                 </div>
             </div>`
         bookContainer.innerHTML = htmlElements;
@@ -134,8 +145,8 @@ formBtn.addEventListener('click', () => {
 })
 
 //Remove this once fully operational, just for testing - also delete your test book objects
-// displayBooks()
-// addReadToggle()
-// addDelete()
+displayBooks()
+addReadToggle()
+addDelete()
 
 //add a way to verify input
