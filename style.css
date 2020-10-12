@@ -61,8 +61,21 @@ header {
 }
 
 .card_text {
-    margin: 25% 0 0 10%;
+    text-align: center;
+    margin-top: 50%;
+}
+
+p {
+    padding-bottom: 10%;
+}
+
+#page_count {
     
+}
+
+
+.read {
+    position: absolute;
 }
 
 .delete {

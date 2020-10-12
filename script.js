@@ -68,13 +68,13 @@ function displayBooks() {
         htmlElements +=         
             `<div class="card" id="${myLibrary.indexOf(book)}">
                 <div class="card_card">
+                    <input type='button' class='read' value='${book.read}'></input>
                     <button class='delete'>X</button>
                     <div class='card_text'>
                         <p>${book.title}</p>
                         <p>${book.author}</p>
-                        <p>${book.pages}</p>
-                    </div>
-                    <div><input type='button' class='read' value='${book.read}'></input></div>
+                        <p id="page_count">${book.pages}</p>
+                    </div> 
                 </div>
             </div>`
         bookContainer.innerHTML = htmlElements;
