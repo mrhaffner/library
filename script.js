@@ -1,22 +1,4 @@
-let myLibrary = [
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-    {title: "Dune", author: "Frank Herbet", pages: "500", read: "Have Not Finished"},
-
- 
-
-];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -24,7 +6,6 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
 }
-
 
 function addBookToLibrary() {
     let title = document.getElementById('title').value;
@@ -34,7 +15,7 @@ function addBookToLibrary() {
     myLibrary.push(new Book(title, author, pages, read))
     document.getElementById('book_form').reset()
     displayBooks()
-    readBtn.value = 'Finished Reading';
+    readBtn.value = 'Finished';
     addReadToggle()
     addDelete()
 }
@@ -93,11 +74,11 @@ clickToggleEvent(readBtn)
 
 function clickToggleEvent (button) {
     button.addEventListener('click', () => {
-        if (button.value === 'Finished Reading') {
-            button.value = 'Have Not Finished';
+        if (button.value === 'Finished') {
+            button.value = 'Reading';
             updateReadStatus(button)
         } else {
-            button.value = 'Finished Reading';
+            button.value = 'Finished';
             updateReadStatus(button)
         };
     })
@@ -143,10 +124,3 @@ formBtn.addEventListener('click', () => {
         formBtn.value = 'New Book';
     }
 })
-
-//Remove this once fully operational, just for testing - also delete your test book objects
-displayBooks()
-addReadToggle()
-addDelete()
-
-//add a way to verify input
