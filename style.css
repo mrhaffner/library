@@ -22,8 +22,10 @@ header {
     background-color: white;
     width: 40vh;
     height: 5vh;
-    padding-top: 1vh;
-    border: 2px solid black;
+    line-height: 5vh;
+    /* padding-top: 1vh; */
+    border: .23vh solid black;
+    font-size: 3.3vh;
 }
 
 
@@ -31,6 +33,7 @@ header {
 #book_container {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 6vh;
 }
 
 .card {
@@ -53,11 +56,11 @@ header {
 .card_card {
     height: 37vh;
     width: 23vh;
-    border: 5px solid black;
+    border: .52vh solid black;
     background-color: white;
-    margin: 40px 0 0 45px;
+    margin: 7vh 0 0 7vh;
     position: relative;
-
+    font-size: 1.7vh;
 }
 
 .card_text {
@@ -69,8 +72,12 @@ p {
     padding-bottom: 10%;
 }
 
+#book_title_text {
+    font-weight: bold;
+}
+
 #page_count {
-    
+    padding-top: 9.5vh;
 }
 
 
@@ -99,7 +106,7 @@ p {
 
 #form_container {
     display: none;
-    
+    font-size: 1.7vh;
 }
 
 #form_align {
@@ -124,6 +131,10 @@ p {
 
 #number_alert {
     opacity: 0;
+}
+
+input {
+    font-size: 1.7vh;
 }
 
 @font-face {

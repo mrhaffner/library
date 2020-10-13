@@ -71,7 +71,7 @@ function displayBooks() {
                     <input type='button' class='read' value='${book.read}'></input>
                     <button class='delete'>X</button>
                     <div class='card_text'>
-                        <p>${book.title}</p>
+                        <p id="book_title_text">${book.title}</p>
                         <p>${book.author}</p>
                         <p id="page_count">${book.pages}</p>
                     </div> 
