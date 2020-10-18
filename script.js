@@ -31,7 +31,7 @@ submitBtn.addEventListener('click', () => {
     if ((title === "") || (author === "") || (pages === "")) {
         numberAlert.style.opacity = '0%';
         emptyAlert.style.opacity = '100%';
-    } else if (pages < 1) {
+    } else if (pages < 1 ||  RegExp(/\D/).test(pages)) {
         emptyAlert.style.opacity = '0%';
         numberAlert.style.opacity = '100%';
     } else {
