@@ -94,6 +94,7 @@ p {
     position: absolute;
     right: 5%;
     top: 3%;
+    cursor: pointer;
 }
 
 #bottom_container {
